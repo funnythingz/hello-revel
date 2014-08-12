@@ -11,7 +11,11 @@ type Header struct {
 }
 
 func (c App) Index() revel.Result {
-    greeting := "hoge"
-    header := &Header{greeting}
+    header := &Header{"hoge"}
 	return c.Render(header)
+}
+
+func (c App) Hello(myName string) revel.Result {
+    header := &Header{"hello"}
+    return c.Render(myName, header)
 }

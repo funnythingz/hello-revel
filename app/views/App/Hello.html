@@ -1,0 +1,21 @@
+{{set . "title" .header.Title}}
+{{template "header.html" .}}
+
+<header class="hero-unit">
+  <div class="container">
+    <div class="row">
+      <div class="hero-text">
+          <h1>{{.header.Title}}</h1>
+        <p>{{.myName}}</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <a href="/">Back to form</a>
+  </div>
+</div>
+
+{{template "footer.html" .}}
