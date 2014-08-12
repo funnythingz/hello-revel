@@ -16,6 +16,18 @@ func (c App) Index() revel.Result {
 }
 
 func (c App) Hello(myName string) revel.Result {
+
+    c.Validation.Required(myName).Message("なんもはいってねいお！いれるんだお！")
+    c.Validation.MinSize(myName, 3).Message("みじかいお！もちょいいれてくれお！")
+
+    if c.Validation.HasErrors() {
+
+        c.Validation.Keep()
+        c.FlashParams()
+
+        return c.Redirect(App.Index)
+    }
+
     header := &Header{"hello"}
     return c.Render(myName, header)
 }
