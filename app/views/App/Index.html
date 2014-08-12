@@ -1,4 +1,4 @@
-{{set . "title" "Home"}}
+{{set . "title" .header.Title}}
 {{set . "lead" "hogehoge"}}
 {{template "header.html" .}}
 
@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="hero-text">
-        <h1>It works!</h1>
+          <h1>{{.header.Title}}</h1>
         <p>{{.lead}}</p>
       </div>
     </div>

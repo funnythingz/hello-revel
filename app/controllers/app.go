@@ -6,6 +6,12 @@ type App struct {
 	*revel.Controller
 }
 
+type Header struct {
+    Title string
+}
+
 func (c App) Index() revel.Result {
-	return c.Render()
+    greeting := "hoge"
+    header := &Header{greeting}
+	return c.Render(header)
 }
