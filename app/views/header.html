@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+<!Doctype html><html><head><meta charset="utf-8">
+<title>{{.title}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=10">
+<link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+<link rel="stylesheet" href="//bootswatch.com/cerulean/bootstrap.min.css">
+<link rel="stylesheet" href="//bootswatch.com/assets/css/bootswatch.min.css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<html>
-  <head>
-    <title>{{.title}}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
-    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
-    <script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
-    {{range .moreStyles}}
-      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
-    {{end}}
-    {{range .moreScripts}}
-      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
-    {{end}}
-  </head>
-  <body>
+{{range .moreStyles}}
+  <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+{{end}}
+{{range .moreScripts}}
+  <script src="/public/{{.}}"></script>
+{{end}}
+</head><body>
