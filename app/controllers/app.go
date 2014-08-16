@@ -7,27 +7,27 @@ type App struct {
 }
 
 type Header struct {
-    Title string
+	Title string
 }
 
 func (c App) Index() revel.Result {
-    header := &Header{"hoge"}
+	header := &Header{"hoge"}
 	return c.Render(header)
 }
 
 func (c App) Hello(myName string) revel.Result {
 
-    c.Validation.Required(myName).Message("なんもはいってねいお！いれるんだお！")
-    c.Validation.MinSize(myName, 3).Message("みじかいお！もちょいいれてくれお！")
+	c.Validation.Required(myName).Message("なんもはいってねいお！いれるんだお！")
+	c.Validation.MinSize(myName, 3).Message("みじかいお！もちょいいれてくれお！")
 
-    if c.Validation.HasErrors() {
+	if c.Validation.HasErrors() {
 
-        c.Validation.Keep()
-        c.FlashParams()
+		c.Validation.Keep()
+		c.FlashParams()
 
-        return c.Redirect(App.Index)
-    }
+		return c.Redirect(App.Index)
+	}
 
-    header := &Header{"hello"}
-    return c.Render(myName, header)
+	header := &Header{"hello"}
+	return c.Render(myName, header)
 }
