@@ -3,7 +3,7 @@ module.exports = (grunt)->
   require('load-grunt-tasks')(grunt)
 
   grunt.registerTask('build', ['clean', 'typescript', 'uglify', 'copy', 'compass'])
-  grunt.registerTask('default', ['open', 'watch'])
+  grunt.registerTask('default', ['build', 'open', 'watch'])
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json')
@@ -37,14 +37,16 @@ module.exports = (grunt)->
       typescript:
         files: ['src/ts/**/*.ts', 'tests/**/*.ts']
         tasks: ['clean', 'typescript', 'uglify', 'copy']
-        options:
-          atBegin: true
 
       css:
         files: ['src/scss/**/*.scss']
         tasks: ['compass']
-        options:
-          atBegin: true
+
+      go:
+        files: ['app/**/*.go', 'app/**/*.html']
+
+      options:
+        livereload: true
 
     clean: ['public/js/*', 'public/css/*']
 

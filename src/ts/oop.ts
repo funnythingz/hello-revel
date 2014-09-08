@@ -1,4 +1,4 @@
-module OOP {
+module SAMPLE {
 
     export interface IClazz {
         id: ID;
