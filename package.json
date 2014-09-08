@@ -1,0 +1,17 @@
+{
+  "name": "hello-revel",
+  "description": "",
+  "author": "funnythingz",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "",
+    "load-grunt-tasks": "~0.1.0",
+    "grunt-typescript": "",
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-watch": "",
+    "grunt-contrib-compass": "",
+    "grunt-contrib-copy": "",
+    "grunt-open": ""
+  }
+}

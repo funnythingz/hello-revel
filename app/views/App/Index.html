@@ -1,5 +1,7 @@
-{{set . "title" .header.Title}}
+{{set . "title" "Index"}}
 {{set . "lead" "hogehoge"}}
+{{append . "moreScripts" "js/app.js"}}
+{{append . "moreStyles" "css/style.css"}}
 {{template "header.html" .}}
 
 <header class="hero-unit">
