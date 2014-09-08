@@ -45,7 +45,10 @@
 
 <script>
 	$sidebar = 0;
-	$('#toggleSidebar').click(function() {
+  $('#toggleSidebar').on('click', function(e) {
+
+    e.preventDefault();
+
 		if ($sidebar === 1) {
 			$('#sidebar').hide();
 			$('#toggleSidebar i').addClass('icon-chevron-left');
